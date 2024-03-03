@@ -1,0 +1,20 @@
+#header {
+    transition: all 0.3s ease;
+}
+
+.header-scroll {
+    @include adaptiveProperty('padding-top', 32, 20);
+    @include adaptiveProperty('padding-bottom', 32, 20);
+    position: fixed !important;
+    top: 0;
+    background-color: #00000083;
+
+    @media(min-width: $mobile) {
+        a, span {
+            color: #fff !important;
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

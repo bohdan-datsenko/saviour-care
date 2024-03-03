@@ -1,0 +1,139 @@
+.header-menu {
+    @media(max-width: $mobile) {
+        width: rem(50);
+        top: 0;
+        right: 0;
+        z-index: 1;
+        transition: width 0.24s ease-in;
+        .nav {
+            visibility: visible;
+            position: absolute;
+            top: rem(140);
+            width: 100%;
+            z-index: 1;
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: rem(38);
+            width: 100%;
+            li {
+                width: 100%;
+            }
+            a {
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+                font-size: rem(38);
+                color: #000;
+            }
+            & a::after {
+                display: none;
+            }
+            & li.active a {
+                font-weight: 300;
+            }
+            button {
+                display: block;
+                width: 100%;
+                font-size: rem(32);
+            }
+        }
+    }
+}
+
+.burger-menu {
+    display: none;
+    position: relative;
+    width: rem(40);
+    height: rem(30);
+    user-select: none;
+    @media(max-width: $mobile) {
+        display: block;
+    }
+    &__button {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        z-index: 1;
+    }
+    &__background {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 100%;
+        background-color: #f2f2f2c7;
+        backdrop-filter: blur(rem(3));
+        transition: width 0.3s ease;
+        content: '';
+    }
+    &__backdrop {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 25%;
+        height: 100%;
+        background-color: transparent;
+    }
+    &.opened &__backdrop {
+        display: block;
+    }
+    &.opened &__background {
+        width: 75%;
+    }
+    &__button span::before, &__button span::after, &__button span {
+        position: absolute;
+        transform: translateY(calc(325%));
+        left: 0;
+        width: 100%;
+        height: rem(4);
+        border-radius: rem(5);
+        background-color: rgb(18, 18, 18);
+        transition: transform 0.3s ease-in-out, rotate 0.3s ease-in-out;
+        content: '';
+    }
+    &__button span::before {
+        transform: translateY(calc(-325%));
+    }
+    &__button span::after {
+        transform: translateY(calc(325%));
+    }
+    &.opened &__button span::before {
+        top: 0;
+        rotate: 45deg;
+        transform: translateY(0);
+        background-color: red;
+    }
+    &.opened &__button span::after {
+        transform: translateY(0);
+        top: 0;
+        rotate: -45deg;
+        background-color: red;
+    }
+
+    &__button span {
+        position: relative;
+        display: block;
+        transition: background-color 0.2s ease-in-out;
+    }
+    &.opened &__button span {
+        background-color: transparent;
+    }
+}
+
+.display {
+    position: absolute;
+    width: 75%;
+    height: 100%;
+
+    li {
+        a {
+            color: $linkActive;
+            opacity: 1;
+        }
+    }
+}

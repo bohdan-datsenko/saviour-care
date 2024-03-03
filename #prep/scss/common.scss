@@ -1,0 +1,128 @@
+._title {
+    @include adaptiveProperty('font-size', 36, 28);
+    font-weight: 700;
+    line-height: 155.556%;
+    color: $textPurple;
+}
+
+._hr {
+    width: rem(56);
+    height: rem(2);
+    background-color: #000;
+    margin-bottom: rem(31);
+}
+
+._text {
+    line-height: 166.667%;
+    margin-bottom: rem(37);
+}
+
+.text-image {
+    @include adaptiveProperty('column-gap', 120, 60);
+    display: grid;
+    grid-template-columns: auto 46.83%;
+    @media(max-width: $mobile) {
+        grid-template-columns: 1fr;
+        row-gap: rem(30);
+
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    &__title {
+        @extend ._title;
+        margin-bottom: rem(26);
+    }
+    &__hr {
+        @extend ._hr;
+    }
+    &__text {
+        @extend ._text;
+    }
+    &__img {
+        max-width: rem(665);
+    }
+    &__img img {
+        width: 100%;
+        height: 100%
+    }
+}
+
+.btn {
+    @include adaptiveProperty('padding-left', 36, 28);
+    @include adaptiveProperty('padding-right', 36, 28);
+    @include adaptiveProperty('padding-top', 18, 14);
+    @include adaptiveProperty('padding-bottom', 18, 14);
+
+    text-align: center;
+
+    color: $btnColor;
+    border-radius: rem(50);
+    font-weight: 700;
+
+    transition: color 0.2s ease-in, background-color 0.2s ease-in;
+}
+
+.btn-primary {
+    @extend .btn;
+
+    @include adaptiveProperty('padding-left', 36, 24);
+    @include adaptiveProperty('padding-right', 36, 24);
+    @include adaptiveProperty('padding-top', 23, 14);
+    @include adaptiveProperty('padding-bottom', 23, 14);
+
+    color: $textLight;
+    background-color: $btnColor;
+
+    @media (hover: hover) {
+        &:hover {
+            background-color: $btnColorHover;
+        }
+    }
+}
+
+.btn-outline {
+    @extend .btn;
+
+    border: rem(1.4) solid $btnColor;
+    background-color: transparent;
+
+    @media (hover: hover) {
+        &:hover {
+            color: $textLight;
+            background-color: $btnColor;
+        }
+    }
+}
+
+.decoration {
+    position: absolute;
+    width: rem(131.5);
+    height: rem(115);
+    @media(max-width: $mobile) {
+        opacity: 0.6;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.ibg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.section {
+    @include adaptiveProperty('padding-top', 95, 45);
+    @include adaptiveProperty('padding-bottom', 95, 45);
+}

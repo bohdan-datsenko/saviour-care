@@ -1,0 +1,90 @@
+.footer { // todo copy to template
+    @include adaptiveProperty('padding-top', 80, 40);
+    @include adaptiveProperty('padding-bottom', 80, 40);
+    display: flex;
+    background: linear-gradient(183deg, #6888C8 -8.57%, #5A98F2 82.96%);
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        column-gap: rem(40);
+        @media(max-width: $mobile) {
+            flex-wrap: wrap;
+            row-gap: rem(50);
+        }
+    }
+    .content {
+        max-width: rem(370);
+        &__text {
+            margin-bottom: rem(30);
+            color: #FFF;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Roboto;
+            font-weight: 500;
+            line-height: 150%;
+            letter-spacing: rem(0.18);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            column-gap: rem(12);
+            margin-bottom: rem(16);
+            &__icon {
+                position: relative;
+                img {
+                    position: relative;
+                    z-index: 1;
+                }
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    scale: 1.4;
+                    border-radius: 50%;
+                    background-color: #DEEEFE;
+                    z-index: 1;
+                    content: '';
+                }
+            }
+            &__text {
+                color: $textLight;
+                font-size: rem(24);
+                font-weight: 700;
+            }
+        }
+        .copyright {
+            color: #FFF;
+            font-size: rem(16);
+        }
+    }
+    .nav {
+        display: flex;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-between;
+        max-width: rem(660);
+        width: 100%;
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            row-gap: rem(15);
+            &__title {
+                color: #FFF;
+                font-size: rem(20);
+                font-weight: 700;
+            }
+            &__link {
+                color: #FFF;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            &__list {
+                display: flex;
+                flex-direction: column;
+                row-gap: rem(8);
+            }
+        }
+    }
+}

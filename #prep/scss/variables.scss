@@ -1,0 +1,38 @@
+// colors
+$btnColor: #458FF6;
+$btnColorHover: #1e75ef;
+
+$textPrimary: #7D7987;
+$textDark: #000;
+$textLight: #fff;
+$textPurple: #462E6A;
+$textBlue: #93C1F9;
+$textLightBlue: #CCD2E9;
+
+$linkColor: #1F1534;
+$linkActive: #2E4E92;
+
+// font by default
+$fontFamily: 'Mulish', sans-serif;
+$defaultFontSize: 16;
+$fontSize: 18;
+
+// width
+$minWidth: 320;
+$maxWidth: 1920;
+$maxWidthContainer: 1620;
+$contentWidthContainer: 1220;
+$containerPadding: 30;
+$containerWidth: $maxWidthContainer + $containerPadding;
+$contentContainerWidth: $contentWidthContainer + $containerPadding;
+
+// break-points
+$pc: em($containerWidth);
+$tablet: em(991.98);
+$mobile: em(767.98);
+$mobileSmall: em(479.98);
+
+// adaptive type
+// 1 = responsive
+// 2 = break-points
+$responsiveType: 1;

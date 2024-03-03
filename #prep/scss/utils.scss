@@ -1,0 +1,51 @@
+/* functions */
+@function percent($parentPx, $px) {
+    @return math.div($parentPx, $px) * 100%;
+}
+
+@function rem($px) {
+    @return math.div($px, $fontSize) + rem;
+}
+
+@function em($px) {
+    @return math.div($px, $defaultFontSize) + em;
+}
+/*  */
+
+/* mixins */
+$maxWidth: 1920;
+$maxContainerWidth: 1620;
+
+@function calculate($minSize, $addSize, $maxWidth, $minWidth) {
+    @return calc(#{$minSize + px} + #{$addSize} * ((100vw - ($minWidth * 1px)) / (#{$maxWidth} - $minWidth)));
+}
+
+@mixin adaptiveProperty($property, $startSize, $minSize, $type: 1, $minWidth: 320) {
+    $addSize: $startSize - $minSize;
+    
+    @if $type == 1 {
+        #{$property}: $startSize + px;
+        @media (max-width: #{$maxContainerWidth + px}) {
+            #{$property}: calculate($minSize, $addSize, $maxContainerWidth, $minWidth);
+        }
+    } @else if($type == 2) {
+        #{$property}: $startSize + px;
+        @media (max-width: #{$maxWidth}) {
+            #{$property}: calculate($minSize, $addSize, $maxWidth, $minWidth);
+        } 
+    } @else {
+        #{$property}: calculate($minSize, $addSize, $maxWidth, $minWidth);
+    }
+}
+
+@function adaptiveValue($startSize, $minSize, $type: 1, $minWidth: 320) {
+    $addSize: $startSize - $minSize;
+    $result: 0;
+
+    @if $type == 1 {
+        @return calculate($minSize, $addSize, $maxContainerWidth, $minWidth);
+    } @else {
+        @return calculate($minSize, $addSize, $maxWidth, $minWidth);
+    }
+}
+/*  */
