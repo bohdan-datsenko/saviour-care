@@ -1,6 +1,6 @@
 // add spoilers
 // improve parallax
-// import { initSwiper } from './modules/swiperInit/swiperInit.js';
+import { initSwiper } from './modules/swiperInit/swiperInit.js';
 // import { handleParallax } from './modules/prlxMouse/prlx-mouse.js';
 import { handleHeaderScroll } from './modules/headerScroll/header-scroll.js';
 import { handleBurgerMenu } from './modules/burgerMenu/burgerMenu.js';
@@ -28,5 +28,5 @@ addDynamicAdaptive();
 // handleScrollTop();
 
 // initiate swiper
-// initSwiper();
+initSwiper();
   

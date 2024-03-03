@@ -7,6 +7,43 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   initSwiper: function() { return /* binding */ initSwiper; }
+/* harmony export */ });
+const initSwiper = () => {
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: false,
+    effect: 'creative',
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        translate: [0, 0, -400],
+      },
+      next: {
+        translate: ["100%", 0, 0],
+      },
+    },
+  
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+};
+
+/***/ }),
+/* 2 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   handleHeaderScroll: function() { return /* binding */ handleHeaderScroll; }
 /* harmony export */ });
 const handleHeaderScroll = (headerElement) => {
@@ -24,7 +61,7 @@ const handleHeaderScroll = (headerElement) => {
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -52,7 +89,7 @@ const handleBurgerMenu = (nav) => {
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -167,12 +204,13 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_headerScroll_header_scroll_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _modules_burgerMenu_burgerMenu_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _modules_dynamicAdaptive_dynamicAdaptive_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _modules_swiperInit_swiperInit_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _modules_headerScroll_header_scroll_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _modules_burgerMenu_burgerMenu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _modules_dynamicAdaptive_dynamicAdaptive_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 // add spoilers
 // improve parallax
-// import { initSwiper } from './modules/swiperInit/swiperInit.js';
+
 // import { handleParallax } from './modules/prlxMouse/prlx-mouse.js';
 
 
@@ -185,22 +223,22 @@ __webpack_require__.r(__webpack_exports__);
 
 // add header scrolling
 const header = document.getElementById('header');
-(0,_modules_headerScroll_header_scroll_js__WEBPACK_IMPORTED_MODULE_0__.handleHeaderScroll)(header);
+(0,_modules_headerScroll_header_scroll_js__WEBPACK_IMPORTED_MODULE_1__.handleHeaderScroll)(header);
 
 // add burgerMenu
 const nav = document.getElementsByClassName('header-menu')[0];
-(0,_modules_burgerMenu_burgerMenu_js__WEBPACK_IMPORTED_MODULE_1__.handleBurgerMenu)(nav);
+(0,_modules_burgerMenu_burgerMenu_js__WEBPACK_IMPORTED_MODULE_2__.handleBurgerMenu)(nav);
 
 // add accordion
 // handleAccordionOpen();
 
-(0,_modules_dynamicAdaptive_dynamicAdaptive_js__WEBPACK_IMPORTED_MODULE_2__.addDynamicAdaptive)();
+(0,_modules_dynamicAdaptive_dynamicAdaptive_js__WEBPACK_IMPORTED_MODULE_3__.addDynamicAdaptive)();
 
 // add scroll to top button
 // handleScrollTop();
 
 // initiate swiper
-// initSwiper();
+(0,_modules_swiperInit_swiperInit_js__WEBPACK_IMPORTED_MODULE_0__.initSwiper)();
   
 }();
 /******/ })()
