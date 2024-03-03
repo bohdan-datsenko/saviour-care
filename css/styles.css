@@ -86,6 +86,10 @@ h1, h2, h3, h4, h5, h6 {
 /*  */
 /* mixins */
 /*  */
+.lock {
+  overflow: hidden;
+}
+
 ._title, .text-image__title {
   font-size: 36px;
   font-weight: 700;
@@ -1163,7 +1167,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .swiper .controlls__content .swiper-button-prev {
   translate: -400% -85%;
-  background-image: url("../../images/what/arrow-right.svg");
+  background-image: url("../images/what/arrow-right.svg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -1176,7 +1180,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .swiper .controlls__content .swiper-button-next {
   translate: 400% -85%;
-  background-image: url("../../images/what/arrow-right.svg");
+  background-image: url("../images/what/arrow-right.svg");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
